@@ -221,7 +221,7 @@ source = "git+https://github.com/inflation/vapoursynth4-rs?rev=05216423fb4316bf2
 
 [[package]]
 name = "webp"
-version = "0.0.0"
+version = "1.0.0"
 dependencies = [
  "const-str",
  "formatx",

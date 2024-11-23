@@ -152,7 +152,7 @@ declare_plugin!(
   "sgt.webp",
   "webp",
   "WebP encoder.",
-  (0, 0),
+  (1, 0),
   VAPOURSYNTH_API_VERSION,
   0,
   (WebPFilter, None)
