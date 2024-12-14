@@ -4,7 +4,13 @@ WebP encoding as a [VapourSynth][] plugin. Currently does VP8L lossless encoding
 
 ## Install
 
-Manually: download a release from the [Releases][] page and unzip
+Via [vsrepo][]:
+
+```
+vsrepo install webp
+```
+
+Or manually: download a release from the [Releases][] page and unzip
 `webp.dll` (Windows), `libwebp.so` (Linux), or `libwebp.dylib` (macOS) into a
 [plugins directory][plugin-autoloading]. There are separate artifacts for Raptor
 Lake (`*-raptorlake.zip`) and AMD Zen 4 (`*-znver4.zip`) CPUs which may or may
@@ -103,6 +109,7 @@ $ RUSTFLAGS="-C target-cpu=native" cargo build --release
 ```
 
 [VapourSynth]: https://www.vapoursynth.com
+[vsrepo]: https://github.com/vapoursynth/vsrepo
 [Releases]: https://github.com/sgt0/vapoursynth-webp/releases
 [plugin-autoloading]: https://www.vapoursynth.com/doc/installation.html#plugin-autoloading
 [Rust-like formatting]: https://doc.rust-lang.org/std/fmt/index.html#formatting-parameters
