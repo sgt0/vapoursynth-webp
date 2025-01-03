@@ -29,7 +29,7 @@ webp.WebP(
 - `clip` — Input video node. Must have RGB24 format.
 - `path` — Output file path. Supports [Rust-like formatting][]. The frame number
   `n` is the only available parameter.
-- `parents` - If `True`, any missing parents of `path` are created as needed.
+- `parents` — If `True`, any missing parents of `path` are created as needed.
   Otherwise, a missing parent will throw an error.
 
 Writes each requested frame to `path`.
