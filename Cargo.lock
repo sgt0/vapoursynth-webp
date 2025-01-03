@@ -333,7 +333,7 @@ checksum = "fdaec418acfe8b470c8accd7104dfb6c10662cccb886bbda1997589d72c1d7ad"
 
 [[package]]
 name = "webp"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "const-str",
  "formatx",
