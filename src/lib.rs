@@ -40,12 +40,12 @@ impl Filter for WebPFilter {
   type FilterData = ();
 
   fn create(
-    input: &MapRef,
-    output: &mut MapRef,
+    input: MapRef<'_>,
+    output: MapRef<'_>,
     _data: Option<Box<Self::FilterData>>,
     mut core: CoreRef<'_>,
   ) -> Result<(), Self::Error> {
-    let Ok(node) = input.get_video_node(key!("clip"), 0) else {
+    let Ok(node) = input.get_video_node(key!(c"clip"), 0) else {
       return Err(cstr!("Failed to get clip."));
     };
 
@@ -60,19 +60,19 @@ impl Filter for WebPFilter {
     }
 
     let path = input
-      .get_utf8(key!("path"), 0)
+      .get_utf8(key!(c"path"), 0)
       .expect("Missing required `path` parameter.");
 
-    let parents = input.get_int(key!("parents"), 0).unwrap_or(0) == 1;
+    let parents = input.get_int(key!(c"parents"), 0).unwrap_or(0) == 1;
 
-    let mut filter = Self {
+    let filter = Self {
       node,
       path: path.to_owned(),
       parents,
     };
 
     let deps = [FilterDependency {
-      source: filter.node.as_mut_ptr(),
+      source: filter.node.as_ptr(),
       request_pattern: RequestPattern::StrictSpatial,
     }];
 
@@ -149,9 +149,9 @@ impl Filter for WebPFilter {
 }
 
 declare_plugin!(
-  "sgt.webp",
-  "webp",
-  "WebP encoder.",
+  c"sgt.webp",
+  c"webp",
+  c"WebP encoder.",
   (1, 0),
   VAPOURSYNTH_API_VERSION,
   0,
