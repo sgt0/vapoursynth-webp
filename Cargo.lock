@@ -47,12 +47,6 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
 name = "const-str"
-version = "0.5.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3618cccc083bb987a415d85c02ca6c9994ea5b44731ec28b9ecf09658655fba9"
-
-[[package]]
-name = "const-str"
 version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "671927c085eb5827d30b95df08f6c6a2301eafe2274c368bb2c16f42e03547eb"
@@ -309,7 +303,7 @@ version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e462f42626aac9ad5d1ce238f0f6fa9f217ce06e42aecfff9ac22cd04edf027f"
 dependencies = [
- "const-str 0.6.0",
+ "const-str",
  "miette",
  "num-derive",
  "num-traits",
@@ -341,7 +335,7 @@ checksum = "fdaec418acfe8b470c8accd7104dfb6c10662cccb886bbda1997589d72c1d7ad"
 name = "webp"
 version = "1.0.4"
 dependencies = [
- "const-str 0.5.7",
+ "const-str",
  "formatx",
  "image-webp",
  "vapours",
