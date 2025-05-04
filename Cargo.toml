@@ -11,7 +11,7 @@ crate-type = ["cdylib"]
 const-str = "0.6.2"
 formatx = "0.2.4"
 image-webp = "0.2.1"
-vapours = "0.1.5"
+vapours = "0.1.7"
 vapoursynth4-rs = "0.3.0"
 
 [profile.release]
