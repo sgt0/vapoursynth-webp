@@ -8,7 +8,7 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-const-str = "=0.7.0"
+const-str = "=0.7.1"
 formatx = "0.2.4"
 image-webp = "0.2.4"
 vapours = "=0.2.3"
