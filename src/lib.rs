@@ -110,7 +110,9 @@ impl Filter for WebPFilter {
         // Naive RGB packing.
         let mut packed = vec![0; width * height * 3];
         for (((src, r), g), b) in packed
-          .chunks_exact_mut(3)
+          .as_chunks_mut::<3>()
+          .0
+          .iter_mut()
           .zip(r_channel.iter())
           .zip(g_channel.iter())
           .zip(b_channel.iter())
