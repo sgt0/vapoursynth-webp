@@ -122,8 +122,7 @@ impl Filter for WebPFilter {
           src[2] = *b;
         }
 
-        let formatted_path =
-          formatx!(self.path.clone(), n = n).expect("`path` format string was invalid");
+        let formatted_path = formatx!(&self.path, n = n).expect("`path` format string was invalid");
         let output_path = Path::new(formatted_path.as_str());
 
         if self.parents {
