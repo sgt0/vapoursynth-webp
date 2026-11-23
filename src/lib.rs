@@ -13,7 +13,7 @@ use vapoursynth4_rs::{
   declare_plugin,
   frame::{FrameContext, VideoFrame},
   key,
-  map::MapRef,
+  map::{MapMut, MapRef},
   node::{
     ActivationReason, Dependencies, Filter, FilterDependency, Node, RequestPattern, VideoNode,
   },
@@ -41,9 +41,9 @@ impl Filter for WebPFilter {
 
   fn create(
     input: MapRef<'_>,
-    output: MapRef<'_>,
-    _data: Option<Box<Self::FilterData>>,
-    mut core: CoreRef<'_>,
+    mut output: MapMut<'_>,
+    _data: Option<&Self::FilterData>,
+    core: CoreRef<'_>,
   ) -> Result<(), Self::Error> {
     let Ok(node) = input.get_video_node(key!(c"clip"), 0) else {
       return Err(cstr!("Failed to get clip."));
@@ -77,7 +77,7 @@ impl Filter for WebPFilter {
     }];
 
     core.create_video_filter(
-      output,
+      &mut output,
       cstr!("WebP"),
       vi,
       Box::new(filter),
